@@ -9,7 +9,7 @@ If you have the stylus extension installed you can install the theme by clicking
 #### Using with self-hosted Redmine
 
 1. Open the extension's "Manage" page
-2. Change the
-   ```css
-   @-moz-document domain("redmine.org") {}
-   ```
+2. Click on `Redmine Dracula`
+3. On the right hand side at the right end of the `Applies to` click on the `+` sign
+4. Add your redmine domain
+5. On the top of the left hand site click on `save`
