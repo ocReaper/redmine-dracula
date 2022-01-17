@@ -1,0 +1,770 @@
+/* ==UserStyle==
+@name Redmine Dracula
+@namespace https://github.com/ocReaper
+@homepageURL https://github.com/ocReaper/redmine-dracula
+@supportURL https://github.com/ocReaper/redmine-dracula/issues
+@version 1.0.0
+@updateURL https://github.com/ocReaper/redmine-dracula/raw/master/style.user.css
+@description  🧛🏻‍♂️ Dark theme for Redmine
+@author ocReaper
+@license MIT
+
+@preprocessor stylus
+@var checkbox purple-topbar "Use purple topbar" 0
+
+@var checkbox custom-font-enabled "Use custom code font" 0
+@var text custom-font "Custom Font" "'Roboto Mono', monospace"
+==/UserStyle== */
+@-moz-document domain("redmine.org") {
+    if custom-font-enabled {
+        @import url('https://fonts.googleapis.com/css2?family=Roboto+Mono:ital,wght@0,400;0,700;1,400;1,700&display=swap');
+    }
+
+    @font-face {
+        font-family: 'Font Awesome 5 Free';
+        font-style: normal;
+        font-weight: 900;
+        font-display: block;
+        src: url("https://use.fontawesome.com/releases/v5.15.4/webfonts/fa-solid-900.eot");
+        src: url("https://use.fontawesome.com/releases/v5.15.4/webfonts/fa-solid-900.eot?#iefix") format("embedded-opentype"),
+        url("https://use.fontawesome.com/releases/v5.15.4/webfonts/fa-solid-900.woff2") format("woff2"),
+        url("https://use.fontawesome.com/releases/v5.15.4/webfonts/fa-solid-900.woff") format("woff"),
+        url("https://use.fontawesome.com/releases/v5.15.4/webfonts/fa-solid-900.ttf") format("truetype"),
+        url("https://use.fontawesome.com/releases/v5.15.4/webfonts/fa-solid-900.svg#fontawesome") format("svg");
+    }
+
+    :root {
+        --background-alt: #15161c;
+        --background: #282a36;
+        --currentLine: #44475a;
+        --foreground: #f8f8f2;
+        --comment: #6272a4;
+        --cyan: #8be9fd;
+        --green: #50fa7b;
+        --orange: #ffb86c;
+        --pink: #ff79c6;
+        --purple: #bd93f9;
+        --red: #ff5555;
+        --yellow: #f1fa8c;
+    }
+
+    body {
+        color: var(--foreground) !important;
+        background: var(--background);
+    }
+
+    body,
+    h1,
+    h2,
+    h3,
+    h4,
+    h5,
+    h6,
+    a.root,
+    code {
+        if custom-font-enabled {
+            font-family: custom-font !important;
+        }
+    }
+
+    td.todo,
+    #main-menu li a.new-object,
+    table.list th,
+    .table-list-header,
+    .box,
+    hr,
+    #time-report .last-level:hover,
+    .count,
+    pre,
+    code,
+    .pagination .current,
+    #content .context-menu-selection,
+    #context-menu li:hover,
+    .box .group td,
+    .box tr,
+    .drdn-items a:hover,
+    .menu-children a:hover,
+    .nodata {
+        background-color: var(--currentLine) !important;
+    }
+
+    #main,
+    #sidebar,
+    #content,
+    #query_form tr,
+    #query_form td,
+    #context-menu ul,
+    .gantt_hdr {
+        background-color: var(--background) !important;
+    }
+
+    #top-menu,
+    #header {
+        if purple-topbar {
+            background-color: #383a59 !important;
+        }
+        else {
+            background-color: var(--background) !important;
+        }
+    }
+    #main-menu {
+        if purple-topbar {
+            border-bottom: 0 !important;
+        } else {
+            border-bottom: 1px solid var(--currentLine) !important;
+        }
+    }
+
+    #footer,
+    tr.group td,
+    tr,
+    .issue.details,
+    .drdn-content,
+    .menu-children {
+        background-color: var(--background) !important;
+    }
+
+    #main-menu li a.new-object,
+    #sidebar li > a.selected,
+    .issue.details,
+    legend,
+    tr.group td,
+    tr,
+    .box,
+    .pagination .current,
+    .nodata {
+        color: var(--foreground) !important;
+    }
+
+    .issue.details,
+    table.list,
+    .table-list,
+    .box,
+    pre,
+    #content,
+    #context-menu li,
+    #content .tabs ul,
+    fieldset,
+    table#time-report tbody tr.total,
+    tr.group td,
+    .drdn-items a,
+    .menu-children,
+    .nodata,
+    .gantt_hdr {
+        border-color: var(--currentLine) !important;
+    }
+
+    a:not(.selected) {
+        color: var(--foreground) !important;
+        transition: .2s linear;
+    }
+
+    .wiki a:not(.selected),
+    .details a:not(.selected) {
+        color: #58a6ff !important;
+        transition: .2s linear;
+    }
+
+    .list.issues th a {
+        color: var(--cyan) !important;
+    }
+
+    a:not(.selected).closed {
+        color: var(--orange) !important;
+    }
+
+    a:not(.selected):hover {
+        color: var(--pink) !important;
+    }
+
+    #main-menu .selected,
+    #sidebar .selected,
+    .tabs .selected {
+        color: var(--background) !important;
+        /*background: linear-gradient(90deg, var(--pink) 0%, var(--purple) 100%) !important;*/
+        background-color: var(--purple) !important;
+    }
+
+    td.closed {
+        background: linear-gradient(90deg, var(--cyan) 0%, var(--comment) 100%) !important;
+    }
+
+    .tabs a,
+    .tabs ul li,
+    #main-menu a {
+        background-color: transparent !important;
+    }
+
+    .block-receiver,
+    .mypage-box,
+    .tabs a,
+    .tabs ul li,
+    #context-menu ul,
+    #footer,
+    .drdn-content,
+    .drdn-content > div {
+        border-color: transparent !important;
+    }
+
+    h1,
+    h2,
+    h3,
+    h4,
+    h5,
+    h6 {
+        color: #8b949e !important;
+    }
+
+    #top-menu {
+        padding: 6px 2px 0 6px !important;
+    }
+
+    #content .issue.details {
+        padding: 20px;
+    }
+
+    #history {
+        padding: 20px 20px 10px 20px;
+    }
+
+    #main-menu li a.new-object,
+    #main-menu .selected,
+    .tabs .selected {
+        border-radius: 3px 3px 0 0;
+    }
+
+    .pagination li {
+        background-color: transparent !important;
+        border-color: transparent !important;
+        -webkit-border-radius: 3px;
+        -moz-border-radius: 3px;
+        border-radius: 3px;
+        margin: 0 5px;
+    }
+    .pagination li.current {
+        background-color: var(--purple) !important;
+        color: var(--background) !important;
+    }
+    .pagination li:hover {
+        border-color: var(--currentLine) !important;
+    }
+    .pagination li:hover a {
+        color: var(--foreground) !important;
+    }
+    .pagination li span {
+        cursor: not-allowed;
+    }
+    #context-menu,
+    #context-menu .folder ul,
+    .drdn-content,
+    .menu-children {
+        box-shadow: 5px 5px 5px 0 #000000;
+    }
+
+    #context-menu ul {
+        padding: 0 !important;
+    }
+
+    #projects-index a.project {
+        color: var(--orange) !important;
+    }
+    #projects-index a.project.root {
+        color: var(--yellow) !important;
+    }
+    code {
+        padding: 2px 4px;
+        border-radius: 3px;
+    }
+    .current-project,
+    #header h1 {
+        color: var(--purple) !important;
+    }
+    .box input:not([type=checkbox]),
+    .box select,
+    .box textarea {
+        appearance: none !important;
+        background-color: var(--background) !important;
+        border-color: var(--currentLine) !important;
+        border-radius: 3px !important;
+        color: var(--foreground) !important;
+        border-width: 1px !important;
+        padding: 2px 5px;
+    }
+    input:not([type=checkbox]),
+    select,
+    textarea {
+        appearance: none !important;
+        background-color: var(--currentLine) !important;
+        border-color: var(--background) !important;
+        border-radius: 3px !important;
+        color: var(--foreground) !important;
+        border-width: 1px !important;
+        padding: 2px 5px;
+    }
+    #flash_notice {
+        background-color: var(--green) !important;
+        color: var(--currentLine) !important;
+    }
+
+    /*
+ * ============ ICONS ==============
+ */
+    #top-menu a.home,
+    #top-menu a.my-page,
+    #top-menu a.projects,
+    #top-menu a.administration,
+    #top-menu a.help,
+    #sidebar li > a:not(.icon),
+    .icon-settings,
+    .icon-add,
+    .icon-add-bullet,
+    span.add_attachment a,
+    .icon-lock,
+    .icon-locked,
+    .icon-unlock,
+    .icon-edit,
+    .icon-fav-off,
+    .icon-fav,
+    .icon-copy,
+    .icon-del,
+    .icon-close,
+    .icon-attachment,
+    .icon-download,
+    .icon-comment,
+    .icon-comments,
+    .icon-issue,
+    .icon-group,
+    .icon-groupnonmember,
+    .icon-groupanonymous,
+    .icon-issue-closed,
+    .icon-issue-edit,
+    .icon-issue-note,
+    .icon-magnifier,
+    .icon-checked,
+    .icon-reload,
+    .icon-save,
+    .icon-zoom-in,
+    .icon-zoom-out,
+    .icon-project,
+    .icon-projects,
+    .icon-user,
+    .icon-email-add,
+    .icon-summary,
+    .icon-roles,
+    .icon-passwd,
+    .toggle-multiselect,
+    .icon-time-entry,
+    .icon-time,
+    .icon-time-add,
+    .icon-link-break,
+    tr.open span.expander,
+    tr span.expander,
+    .sort-handle,
+    .icon-vcard,
+    .icon-package,
+    .icon-move,
+    .icon-history,
+    .icon-not-ok,
+    .icon-workflows,
+    .icon-custom-fields,
+    .icon-list,
+    .icon-server-authentication,
+    .icon-plugins,
+    .icon-help,
+    .icon-ok,
+    .icon-error,
+    .ui-state-default .ui-icon,
+    #context-menu li a.submenu,
+    tr.issue.parent td.subject,
+    tr.issue.idnt td.subject,
+    table.cal .starting a.issue,
+    p.cal.legend .starting,
+    table.cal .ending a.issue,
+    p.cal.legend .ending,
+    table.cal .starting.ending a.issue,
+    p.cal.legend .starting.ending,
+    button.tab-left,
+    button.tab-right,
+    tr.project.idnt td.name span {
+        background-image: none !important;
+        position: relative;
+    }
+
+    #top-menu a.home::before,
+    #top-menu a.my-page::before,
+    #top-menu a.projects::before,
+    #top-menu a.administration::before,
+    #top-menu a.help::before,
+    #sidebar li > a::before,
+    .icon-settings::before,
+    .icon-add::before,
+    .icon-add-bullet::before,
+    span.add_attachment a::before,
+    .icon-lock::before,
+    .icon-locked::before,
+    .icon-unlock::before,
+    .icon-edit::before,
+    .icon-fav-off::before,
+    .icon-fav::before,
+    .icon-copy::before,
+    .icon-del::before,
+    .icon-close::before,
+    .icon-attachment::before,
+    .icon-download::before,
+    .icon-comment::before,
+    .icon-comments::before,
+    .icon-issue::before,
+    .icon-group::before,
+    .icon-groupnonmember::before,
+    .icon-groupanonymous::before,
+    .icon-issue-closed::before,
+    .icon-issue-edit::before,
+    .icon-issue-note::before,
+    .icon-magnifier::before,
+    .icon-checked::before,
+    .icon-reload::before,
+    .icon-save::before,
+    .icon-zoom-in::before,
+    .icon-zoom-out::before,
+    .icon-project::before,
+    .icon-projects::before,
+    .icon-user::before,
+    .icon-email-add::before,
+    .icon-summary::before,
+    .icon-roles::before,
+    .icon-passwd::before,
+    .toggle-multiselect::before,
+    .icon-time-entry::before,
+    .icon-time::before,
+    .icon-time-add::before,
+    .icon-link-break::before,
+    tr.open span.expander::before,
+    tr span.expander::before,
+    .sort-handle::before,
+    .icon-vcard::before,
+    .icon-package::before,
+    .icon-move::before,
+    .icon-history::before,
+    .icon-not-ok::before,
+    .icon-workflows::before,
+    .icon-custom-fields::before,
+    .icon-list::before,
+    .icon-server-authentication::before,
+    .icon-plugins::before,
+    .icon-help::before,
+    .icon-ok::before,
+    .icon-error::before,
+    .ui-state-default .ui-icon::before,
+    #context-menu li a.submenu::before,
+    tr.issue.parent td.subject::before,
+    tr.issue.idnt td.subject::before,
+    table.cal .starting a.issue::before,
+    p.cal.legend .starting::before,
+    table.cal .ending a.issue::before,
+    p.cal.legend .ending::before,
+    table.cal .starting.ending a.issue::before,
+    p.cal.legend .starting.ending::before,
+    button.tab-left::before,
+    button.tab-right::before,
+    tr.project.idnt td.name span::before {
+        content: "";
+        position: absolute;
+        left: 0;
+        top: 50%;
+        width: 16px;
+        font-family: 'Font Awesome 5 Free';
+        font-size: 13px;
+        text-align: center;
+        transform: translateY(-50%);
+        color: var(--foreground);
+    }
+
+    #top-menu a.home::before {
+        content: "\f015"!important;
+    }
+
+    #top-menu a.my-page::before {
+        content: "\e065"!important;
+    }
+
+    #top-menu a.projects::before {
+        content: "\f01c"!important;
+    }
+
+    #top-menu a.administration::before {
+        content: "\f085"!important;
+    }
+
+    #top-menu a.help::before {
+        content: "\f059"!important;
+    }
+
+    .icon-settings::before {
+        content: "\f013"!important;
+    }
+
+    .icon-add::before {
+        content: "\f055"!important;
+    }
+
+    .icon-add-bullet::before {
+        content: "\f055"!important;
+    }
+
+    span.add_attachment a::before {
+        content: "\f055"!important;
+    }
+
+    .icon-lock::before,
+    .icon-locked::before {
+        content: "\f023"!important;
+    }
+
+    .icon-unlock::before {
+        content: "\f3c1"!important;
+    }
+
+    .icon-edit::before {
+        content: "\f044"!important;
+    }
+
+    .icon-fav-off::before {
+        content: "\f070"!important;
+    }
+
+    .icon-fav::before {
+        content: "\f06e"!important;
+    }
+
+    .icon-copy::before {
+        content: "\f0c5"!important;
+    }
+
+    .icon-close::before,
+    .icon-close:hover::before {
+        content: "\f00d"!important;
+    }
+
+    .icon-del::before {
+        content: "\f2ed"!important;
+    }
+
+    .icon-attachment::before {
+        content: "\f0c6"!important;
+    }
+
+    .icon-download::before {
+        content: "\f019"!important;
+    }
+
+    .icon-comment::before {
+        content: "\f075"!important;
+    }
+    .icon-comments::before {
+        content: "\f086"!important;
+    }
+
+    .icon-issue::before {
+        content: "\f14a"!important;
+    }
+
+    .icon-issue-closed::before {
+        content: "\f14a"!important;
+    }
+
+    .icon-issue-edit::before {
+        content: "\f14b"!important;
+    }
+
+    .icon-issue-note::before {
+        content: "\f4ad"!important;
+    }
+
+    .icon-group::before,
+    .icon-groupnonmember::before,
+    .icon-groupanonymous::before {
+        content: "\f0c0"!important;
+    }
+
+    .icon-magnifier::before {
+        content: "\f002"!important;
+    }
+
+    .icon-checked::before {
+        content: "\f00c"!important;
+    }
+
+    .icon-reload::before {
+        content: "\f2f1"!important;
+    }
+
+    .icon-save::before {
+        content: "\f0c7"!important;
+    }
+
+    .icon-zoom-in::before {
+        content: "\f00e"!important;
+    }
+
+    .icon-zoom-out::before {
+        content: "\f010"!important;
+    }
+
+    .icon-project::before {
+        content: "\f01c"!important;
+    }
+
+    .icon-projects::before {
+        content: "\f468"!important;
+    }
+
+    .icon-user::before {
+        content: "\f007"!important;
+    }
+
+    .icon-email-add::before {
+        content: "\f0e0"!important;
+    }
+
+    .icon-summary::before {
+        content: "\f0ae"!important;
+    }
+
+    .icon-roles::before {
+        content: "\f505"!important;
+    }
+
+    .icon-passwd::before {
+        content: "\f084"!important;
+    }
+
+    .toggle-multiselect::before {
+        content: "\f0fe"!important;
+    }
+
+    .icon-time-entry::before,
+    .icon-time::before {
+        content: "\f2f2"!important;
+    }
+
+    .icon-time-add::before {
+        content: "\f2f2"!important;
+    }
+
+    .icon-link-break::before {
+        content: "\f127"!important;
+    }
+
+    tr.open span.expander::before {
+        content: "\f056"!important;
+    }
+
+    tr span.expander::before {
+        content: "\f055"!important;
+    }
+
+    .sort-handle::before {
+        content: "\f0b2"!important;
+    }
+
+    .icon-vcard::before {
+        content: "\f2bb"!important;
+    }
+
+    .icon-package::before {
+        content: "\f466"!important;
+    }
+
+    .icon-move::before {
+        content: "\f362"!important;
+    }
+
+    .icon-history::before {
+        content: "\f1da"!important;
+    }
+
+    button.tab-left::before {
+        content: "\f053"!important;
+    }
+    button.tab-right::before {
+        content: "\f054"!important;
+    }
+
+    .icon-workflows::before {
+        content: "\f542"!important;
+    }
+
+    .icon-custom-fields::before {
+        content: "\f246"!important;
+    }
+
+    .icon-list::before {
+        content: "\f03a"!important;
+    }
+
+    .icon-server-authentication::before {
+        content: "\f233"!important;
+    }
+
+    .icon-plugins::before {
+        content: "\f12e"!important;
+    }
+
+    .icon-help::before {
+        content: "\f059"!important;
+    }
+
+    .icon-ok::before {
+        content: "\f00c"!important;
+    }
+    .icon-error::before {
+        content: "\f071"!important;
+    }
+
+    #context-menu li a.submenu::before {
+        padding-right: 16px;
+        content: "\f0da"!important;
+    }
+
+    tr.issue.parent td.subject::before {
+        content: "\f01c"!important;
+    }
+
+    tr.issue.idnt td.subject::before {
+        content: "\f30b"!important;
+    }
+
+    table.cal .starting a.issue::before,
+    p.cal.legend .starting::before {
+        content: "\f35a"!important;
+    }
+    table.cal .ending a.issue::before,
+    p.cal.legend .ending::before {
+        content: "\f359"!important;
+    }
+    table.cal .starting.ending a.issue::before,
+    p.cal.legend .starting.ending::before {
+        content: "\f192"!important;
+    }
+
+    tr.project.idnt td.name span::before {
+        content: "\f0da"!important;
+    }
+
+    #top-menu a.home,
+    #top-menu a.my-page,
+    #top-menu a.projects,
+    #top-menu a.administration,
+    #top-menu a.help,
+    tr.issue.parent td.subject,
+    .icon {
+        padding-left: 20px !important;
+    }
+    #wrapper3,
+    #footer {
+        margin: 0;
+    }
+    #footer {
+        text-align: center;
+    }
+}

@@ -1,17 +1,7 @@
-### [Foobar](https://foobar.com)
+### [Redmine](https://redmine.org)
 
-#### Install using Git
+#### Install using Stylus
 
-If you are a git user, you can install the theme and keep up to date by cloning the repo:
+If you have the stylus extension installed you can install the theme by clicking the link below.
 
-    git clone https://github.com/dracula/foobar.git
-
-#### Install manually
-
-Download using the [GitHub .zip download](https://github.com/dracula/foobar/archive/master.zip) option and unzip them.
-
-#### Activating theme
-
-1. Do this
-2. Then that
-3. Boom! It's working
+[![Install directly with Stylus](https://img.shields.io/badge/Install%20directly%20with-Stylus-00adad.svg)](https://github.com/ocReaper/redmine-dracula/raw/master/style.user.css)
