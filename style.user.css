@@ -84,7 +84,8 @@
     .box tr,
     .drdn-items a:hover,
     .menu-children a:hover,
-    .nodata {
+    .nodata,
+    .drdn-trigger {
         background-color: var(--currentLine) !important;
     }
 
@@ -132,7 +133,8 @@
     tr,
     .box,
     .pagination .current,
-    .nodata {
+    .nodata,
+    .drdn-trigger {
         color: var(--foreground) !important;
     }
 
@@ -304,6 +306,9 @@
     #flash_notice {
         background-color: var(--green) !important;
         color: var(--currentLine) !important;
+    }
+    .drdn-trigger {
+        border-color: var(--background) !important;
     }
 
     /*
