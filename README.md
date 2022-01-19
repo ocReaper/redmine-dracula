@@ -8,6 +8,11 @@
 
 All instructions can be found in [INSTALL.md](https://github.com/ocReaper/redmine-dracula/blob/master/INSTALL.md).
 
+## Customization
+
+- it can be used with or without purple header
+- it can be used with a custom font, but defaults to "Roboto Mono"
+
 ## Team
 
 This theme is maintained by the following person(s) and a bunch of [awesome contributors](https://github.com/ocReaper/redmine-dracula/graphs/contributors).
