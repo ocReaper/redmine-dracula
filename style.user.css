@@ -285,7 +285,7 @@
     #header h1 {
         color: var(--purple) !important;
     }
-    .box input:not([type=checkbox]),
+    .box input:not([type=checkbox], [type=radio]),
     .box select,
     .box textarea {
         appearance: none !important;
@@ -296,7 +296,7 @@
         border-width: 1px !important;
         padding: 2px 5px;
     }
-    input:not([type=checkbox]),
+    input:not([type=checkbox], [type=radio]),
     select,
     textarea {
         appearance: none !important;
