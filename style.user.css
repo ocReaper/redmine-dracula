@@ -197,6 +197,10 @@
         background-color: transparent !important;
     }
 
+    #preview .preview {
+        background: transparent !important;
+    }
+
     .block-receiver,
     .mypage-box,
     .tabs a,
