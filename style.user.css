@@ -99,6 +99,13 @@
         background-color: var(--background) !important;
     }
 
+    div.wiki ul.toc {
+        background-color: var(--background-alt) !important;
+        padding: 15px 25px !important;
+        border-radius: 3px !important;
+        border-color: var(--purple) !important;
+    }
+
     #top-menu,
     #header {
         if purple-topbar {
